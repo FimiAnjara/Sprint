@@ -1,5 +1,5 @@
 <html>
   <body>
-    Hello tout le monde !
+    Welcome everybody !
   </body>
 </html>

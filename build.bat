@@ -7,7 +7,7 @@ set WEBAPP=src\main\webapp
 set RESOURCES=src\main\resources
 set OUT=build
 set LIB=lib
-set FRAMEWORK=..\framework\dist\framework.jar
+set FRAMEWORK=..\framework\framework.jar
 
 rem === Création du dossier de sortie ===
 if not exist %OUT% mkdir %OUT%

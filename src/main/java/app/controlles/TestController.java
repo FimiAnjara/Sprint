@@ -9,4 +9,9 @@ public class TestController {
     public String listerProduits() {
         return "<h1>Liste des produits</h1>";
     }
+
+    @Annotation("/produit/detail")
+    public String detailProduit() {
+        return "<h1>Détail du produit</h1>";
+    }
 }

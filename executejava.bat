@@ -1,3 +1,2 @@
 
-
-java -cp ".;..\lib\framework.jar" Main
+java -cp ".;..\lib\framework.jar" Mainé:

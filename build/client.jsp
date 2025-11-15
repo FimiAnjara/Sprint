@@ -4,7 +4,13 @@
     <title>Hello Framework</title>
 </head>
 <body>
+    <%
+        String nom = (String) request.getAttribute("nom");
+        if (nom == null) {
+            nom = "Non spécifié";
+        }
+    %>
     <h1>Hello depuis le Framework MVC</h1>
-    <p>Cette page est affichée via ModelView</p>
+    <p>Nom: <%= nom %></p>
 </body>
 </html>

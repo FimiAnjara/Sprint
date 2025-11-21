@@ -1,11 +1,11 @@
 package main.java.app.controlles.Client;
 
-import fw.annotation.Controller;
+import annotation.Controller;
 
 import java.util.Map;
 
 import View.ModelView;
-import fw.annotation.Annotation;
+import annotation.Annotation;
 
 @Controller
 public class Client {
@@ -18,4 +18,9 @@ public class Client {
     public ModelView detailClient() {
         return new ModelView("/client.jsp", Map.of("nom", "Dupont", "prenom", "Jean"));
     }
+
+    @Annotation("/client/{id}/detail")
+    public ModelView clientDetail() {
+        return new ModelView("/client.jsp", Map.of( "nom", "Dupont", "prenom", "Jean"));
+    } 
 }

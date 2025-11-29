@@ -6,7 +6,7 @@
     <title>Document</title>
 </head>
 <body>
-    <form action="client/detail" method="post" >
+    <form action="client/detail/7" method="post" >
         
          <div class="form-group">
                 <label for="nom">Nom <span class="required">*</span></label>

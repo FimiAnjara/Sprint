@@ -21,7 +21,7 @@ for /R %SRC% %%f in (*.java) do (
 
 rem === Compilation ===
 echo Compilation des fichiers Java...
-javac -encoding UTF-8 -source 17 -target 17 -cp "%LIB%\*;%FRAMEWORK%" -d %OUT%\WEB-INF\classes @sources.txt
+javac -encoding UTF-8 -source 17 -target 17 -cp "%LIB%\*;%FRAMEWORK%" -parameters -d %OUT%\WEB-INF\classes @sources.txt
 
 if %ERRORLEVEL% neq 0 (
     echo Erreur de compilation.
@@ -46,7 +46,7 @@ if exist %RESOURCES% (
 rem === Copie des libs dans WEB-INF/lib ===
 echo Copie des bibliothèques...
 if not exist %OUT%\WEB-INF\lib mkdir %OUT%\WEB-INF\lib
-xcopy /Y %LIB%\*.jar %OUT%\WEB-INF\lib\
+xcopy /Y %LIB%\*.jar  %OUT%\WEB-INF\lib\
 
 rem === Copie du framework dans WEB-INF/lib ===
 if exist %FRAMEWORK% (

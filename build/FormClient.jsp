@@ -6,7 +6,11 @@
     <title>Document</title>
 </head>
 <body>
+<<<<<<< HEAD
+    <form action="client/detail/7" method="post" >
+=======
     <form action="client/detail/2" method="post" >
+>>>>>>> e32aa56 (sprint6-ter/matchedpattern to value)
         
          <div class="form-group">
                 <label for="nom">Nom <span class="required">*</span></label>

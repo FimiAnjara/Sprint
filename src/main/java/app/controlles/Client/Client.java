@@ -1,12 +1,11 @@
 package main.java.app.controlles.Client;
 
-import annotation.Controller;
+import annotation.*;
 import utilitaire.Param;
 
 import java.util.Map;
 
 import View.ModelView;
-import annotation.Annotation;
 
 @Controller
 public class Client {
@@ -15,12 +14,12 @@ public class Client {
         return new ModelView("/FormClient.jsp",null);
     }    
 
-    @Annotation("/client/detail/{id}")
-    public ModelView detailClient(int id,String nom,@Param("nom") String pp,String prenom) {
-        return new ModelView("/client.jsp", Map.of("nom", nom, "prenom", "Jean"));
+    @Post("/client/detail/{id}")
+    public ModelView detailClient(String nom,@Param("nom") String pp,String prenom) {
+        return new ModelView("/client.jsp", Map.of("nom", pp, "prenom", "Jean"));
     }
 
-    @Annotation("/client/{id}/detail")
+    @Get("/client/detail/{id}")
     public ModelView clientDetail() {
         return new ModelView("/client.jsp", Map.of( "nom", "Dupont", "prenom", "Jean"));
     } 

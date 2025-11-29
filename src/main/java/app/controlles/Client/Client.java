@@ -15,9 +15,9 @@ public class Client {
         return new ModelView("/FormClient.jsp",null);
     }    
 
-    @Annotation("/client/detail")
-    public ModelView detailClient(String nom,@Param("nom") String pp,String prenom) {
-        return new ModelView("/client.jsp", Map.of("nom", "Dupont", "prenom", "Jean"));
+    @Annotation("/client/detail/{id}")
+    public ModelView detailClient(int id,String nom,@Param("nom") String pp,String prenom) {
+        return new ModelView("/client.jsp", Map.of("nom", nom, "prenom", "Jean"));
     }
 
     @Annotation("/client/{id}/detail")

@@ -9,13 +9,13 @@ import annotation.Annotation;
 
 @Controller
 public class Client {
-    @Annotation("/client/liste")
+    @Annotation("/client")
     public ModelView listerClients() {
-        return new ModelView("/client.jsp");
+        return new ModelView("/FormClient.jsp",null);
     }    
 
     @Annotation("/client/detail")
-    public ModelView detailClient() {
+    public ModelView detailClient(String nom,String prenom) {
         return new ModelView("/client.jsp", Map.of("nom", "Dupont", "prenom", "Jean"));
     }
 

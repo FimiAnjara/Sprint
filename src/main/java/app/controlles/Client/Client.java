@@ -1,6 +1,7 @@
 package main.java.app.controlles.Client;
 
 import annotation.Controller;
+import utilitaire.Param;
 
 import java.util.Map;
 
@@ -15,7 +16,7 @@ public class Client {
     }    
 
     @Annotation("/client/detail")
-    public ModelView detailClient(String nom,String prenom) {
+    public ModelView detailClient(String nom,@Param("nom") String pp,String prenom) {
         return new ModelView("/client.jsp", Map.of("nom", "Dupont", "prenom", "Jean"));
     }
 

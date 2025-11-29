@@ -21,7 +21,7 @@ public class TestController {
     }
 
     @Annotation("/produit/{id}/detail")
-    public String produitDetail(String id) {
-        return "<h1>Détail du produit ID: " + id + "</h1>";
+    public String produitDetail() {
+        return "<h1>Détail du produit ID: </h1>";
     }
 }

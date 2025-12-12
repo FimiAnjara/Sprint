@@ -6,17 +6,20 @@
     <title>Document</title>
 </head>
 <body>
-<<<<<<< HEAD
-    <form action="client/detail/7" method="post" >
-=======
-    <form action="client/detail/2" method="post" >
->>>>>>> e32aa56 (sprint6-ter/matchedpattern to value)
-        
-         <div class="form-group">
-                <label for="nom">Nom <span class="required">*</span></label>
-                <input type="text" id="nom" name="nom" required placeholder="Votre nom">
-        </div>
-        <button type="submit" class="btn-submit">S'inscrire</button>
-    </form>
+    <form action="client/add" method="post">
+    <input type="text" name="nom" placeholder="Nom" value="Dupont">
+    <input type="text" name="prenom" placeholder="Prénom" value="Jean">
+    <input type="email" name="email" placeholder="Email" value="jean@test.com">
+    <input type="number" name="age" placeholder="Âge" value="30">
+    
+    <!-- Champs multiples -->
+    <select name="interets" multiple>
+        <option value="sport">Sport</option>
+        <option value="lecture">Lecture</option>
+        <option value="musique">Musique</option>
+    </select>
+    
+    <button type="submit">Ajouter</button>
+</form>
 </body>
 </html>

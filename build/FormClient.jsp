@@ -6,20 +6,13 @@
     <title>Document</title>
 </head>
 <body>
-    <form action="client/add" method="post">
-    <input type="text" name="nom" placeholder="Nom" value="Dupont">
-    <input type="text" name="prenom" placeholder="Prénom" value="Jean">
-    <input type="email" name="email" placeholder="Email" value="jean@test.com">
-    <input type="text" name="age" placeholder="Âge" value="30">
-    
-    <!-- Champs multiples -->
-    <select name="interets[]" multiple>
-        <option value="sport">Sport</option>
-        <option value="lecture">Lecture</option>
-        <option value="musique">Musique</option>
-    </select>
-    
-    <button type="submit">Ajouter</button>
-</form>
+   
+
+
+    <form action="client/upload" method="POST" enctype="multipart/form-data">
+    <input type="text" name="name" placeholder="Nom" required>
+    <input type="file" name="file1">
+    <button type="submit">Uploader</button>
+    </form>
 </body>
 </html>

@@ -64,4 +64,16 @@ public class ClientController {
         client.setTypeClient(new TypeClient(1,"Particulier"));
         return client;
     }
+
+    @Post("/client/upload")
+    public ModelView uploadFiles(Map<String, byte[]> files, String name) {
+        System.out.println("Fichiers reçus: " + files.size());
+        
+        files.forEach((paramName, fileContent) -> {
+            System.out.println("Fichier: " + paramName + " (" + fileContent.length + " bytes)");
+        });
+        
+        return new ModelView("/success.jsp");
+    }
+    
 }

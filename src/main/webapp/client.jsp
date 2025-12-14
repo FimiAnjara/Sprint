@@ -8,7 +8,8 @@
     <%
         String nom = (String) request.getAttribute("nom");
         String prenom = (String) request.getAttribute("prenom");
-        String[] interets = (String[]) request.getAttribute("interets[]");
+        
+        String[] interets = (String[]) request.getAttribute("interets");
         if (nom == null) {
             nom = "Non spécifié";
         }

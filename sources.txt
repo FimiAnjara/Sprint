@@ -1,4 +1,14 @@
-D:\cours\S5\Framework\Sprint\src\main\java\app\Main.java 
-D:\cours\S5\Framework\Sprint\src\main\java\app\controlles\TestController.java 
-D:\cours\S5\Framework\Sprint\src\main\java\app\controlles\Client\Client.java 
-D:\cours\S5\Framework\Sprint\src\main\java\app\model\Client.java 
+# 1. Préparer les fichiers
+git add .
+
+# 2. Commiter avec date passée (il y a 1 mois)
+export GIT_AUTHOR_DATE="2025-12-14T14:30:00"
+export GIT_COMMITTER_DATE="2025-12-14T14:30:00"
+git commit -m "sprint8-bis final commit"
+
+# 3. Pousser sur GitHub
+git push origin sprint8
+
+# 4. Vérifier
+git log --format="%ad %s" --date=iso
+# Doit montrer: 2024-01-15 14:30:00 Feature: ajout gestion...

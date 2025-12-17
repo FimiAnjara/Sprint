@@ -4,6 +4,7 @@ public class Client {
     String prenom;
     String email;
     int age;
+    TypeClient typeClient;
     // setters and getters
     public void setNom(String nom) {
         this.nom = nom;
@@ -31,5 +32,11 @@ public class Client {
     }
     public String getEmail() {
         return email;
+    }
+    public TypeClient getTypeClient() {
+        return typeClient;
+    }
+    public void setTypeClient(TypeClient typeClient) {
+        this.typeClient = typeClient;
     }
 }

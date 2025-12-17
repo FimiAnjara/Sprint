@@ -3,6 +3,7 @@ package controlles.Client;
 import annotation.*;
 
 import model.Client;
+import model.TypeClient;
 
 import java.util.Map;
 
@@ -50,5 +51,17 @@ public class ClientController {
     @Get("/client/detail/{id}")
     public ModelView clientDetail() {
         return new ModelView("/client.jsp", Map.of("nom", "Dupont", "prenom", "Jean"));
+    }
+
+    @Json
+    @Get("/client/json")
+    public Client getClientJson() {
+        Client client = new Client();
+        client.setNom("Dupont");
+        client.setPrenom("Jean");
+        client.setEmail("jean@gmail.com");
+        client.setAge(30);
+        client.setTypeClient(new TypeClient(1,"Particulier"));
+        return client;
     }
 }

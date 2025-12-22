@@ -13,7 +13,7 @@
     <input type="number" name="age" placeholder="Âge" value="30">
     
     <!-- Champs multiples -->
-    <select name="interets" multiple>
+    <select name="interets[]" multiple>
         <option value="sport">Sport</option>
         <option value="lecture">Lecture</option>
         <option value="musique">Musique</option>

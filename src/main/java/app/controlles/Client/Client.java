@@ -25,17 +25,11 @@ public class Client {
         for (Map.Entry<String, Object> entry : values.entrySet()) {
             System.out.println(entry.getKey() + " = " + entry.getValue());
         }
+        System.out.println("======================");
+        System.out.println(values);
+   
 
-        // Traitement des données
-        String nom = (String) values.get("nom");
-        String prenom = (String) values.get("prenom");
-        String email = (String) values.get("email");
-
-        // Logique métier...
-        System.out.println("Ajout client: " + nom + " " + prenom);
-
-        return new ModelView("/confirmation.jsp",
-                Map.of("nom", nom, "prenom", prenom, "email", email));
+        return new ModelView("/client.jsp",values);
     }
 
     @Get("/client/detail/{id}")

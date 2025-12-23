@@ -10,7 +10,7 @@
     <input type="text" name="nom" placeholder="Nom" value="Dupont">
     <input type="text" name="prenom" placeholder="Prénom" value="Jean">
     <input type="email" name="email" placeholder="Email" value="jean@test.com">
-    <input type="number" name="age" placeholder="Âge" value="30">
+    <input type="text" name="age" placeholder="Âge" value="30">
     
     <!-- Champs multiples -->
     <select name="interets[]" multiple>

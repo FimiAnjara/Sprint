@@ -1,4 +1,5 @@
 D:\cours\S5\Framework\Sprint\src\main\java\app\Main.java 
+D:\cours\S5\Framework\Sprint\src\main\java\app\controlles\NameSessionController.java 
 D:\cours\S5\Framework\Sprint\src\main\java\app\controlles\TestController.java 
 D:\cours\S5\Framework\Sprint\src\main\java\app\controlles\Client\ClientController.java 
 D:\cours\S5\Framework\Sprint\src\main\java\app\model\Client.java 

@@ -5,6 +5,7 @@ import annotation.*;
 import model.Client;
 import model.TypeClient;
 import utilitaire.UploadedFile;
+import utilitaire.SessionManager;
 import java.io.IOException;
 
 import java.util.Map;
@@ -101,11 +102,30 @@ public class ClientController {
             }
         }
         
+       
+        SessionManager sm = SessionManager.getInstance();
+ 
+        java.util.List<String> names = (java.util.List<String>) sm.getAttribute("names");
+        if (names == null) {
+            names = new java.util.ArrayList<>();
+        }
+        if (name != null && !name.isEmpty()) {
+            names.add(name);
+        }
+        sm.setAttribute("names", names);
+
         String message = files.size() + " fichier(s) reçu(s) avec succès pour " + name;
         return new ModelView("/uploadSuccess.jsp", Map.of(
             "message", message,
             "files", uploadedFilesList
         ));
+    }
+
+    @Get("/client/names")
+    public ModelView listNames() {
+        SessionManager sm = SessionManager.getInstance();
+        java.util.List<String> names = (java.util.List<String>) sm.getAttribute("names");
+        return new ModelView("/client.jsp", Map.of("names", names));
     }
 
 }

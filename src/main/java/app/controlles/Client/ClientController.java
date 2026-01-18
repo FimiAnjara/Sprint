@@ -121,6 +121,38 @@ public class ClientController {
         ));
     }
 
+    @Post("/client/upload-session")
+    public ModelView uploadFilesSession(Map<UploadedFile, byte[]> files, String name, @annotation.Session SessionManager session) {
+        // Ajout du nom dans la session via SessionManager injecté
+        java.util.List<String> names = (java.util.List<String>) session.getAttribute("names");
+        if (names == null) {
+            names = new java.util.ArrayList<>();
+        }
+        if (name != null && !name.isEmpty()) {
+            names.add(name);
+        }
+        session.setAttribute("names", names);
+        String message = files.size() + " fichier(s) reçu(s) avec succès pour " + name;
+        return new ModelView("/uploadSuccess.jsp", Map.of(
+            "message", message,
+            "files", new java.util.ArrayList<>(files.keySet())
+        ));
+    }
+
+    @Post("/client/upload-session-demo")
+    public ModelView uploadFilesSessionDemo(Map<UploadedFile, byte[]> files, String name, @annotation.Session Map<String, Object> session) {
+        // Pas besoin de stocker manuellement ! Le framework le fait automatiquement.
+        // Les paramètres sont automatiquement injectés dans la session :
+        // - "name" -> valeur du paramètre name
+        // - "names" -> liste accumulée des valeurs de name
+        
+        String message = files.size() + " fichier(s) reçu(s) avec succès pour " + name;
+        return new ModelView("/uploadSuccess.jsp", Map.of(
+            "message", message,
+            "files", new java.util.ArrayList<>(files.keySet())
+        ));
+    }
+
     @Get("/client/names")
     public ModelView listNames() {
         SessionManager sm = SessionManager.getInstance();

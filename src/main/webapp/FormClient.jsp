@@ -6,9 +6,6 @@
     <title>Document</title>
 </head>
 <body>
-   
-
-
     <form action="client/upload" method="POST" enctype="multipart/form-data">
     <input type="text" name="name" placeholder="Nom" required>
     <input type="file" name="file1">

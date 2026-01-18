@@ -129,6 +129,21 @@
         <div class="success-message">
             <strong><%= request.getAttribute("message") %></strong>
         </div>
+
+        <%-- Affichage de la liste des noms stockés --%>
+        <%
+            java.util.List names = (java.util.List) utilitaire.SessionManager.getInstance().getAttribute("names");
+            if (names != null && !names.isEmpty()) {
+        %>
+        <div class="success-message">
+            <strong>Noms enregistrés :</strong>
+            <ul>
+                <% for (Object n : names) { %>
+                    <li><%= n %></li>
+                <% } %>
+            </ul>
+        </div>
+        <% } %>
         
         <%
             List<UploadedFile> files = (List<UploadedFile>) request.getAttribute("files");
